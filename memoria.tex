@@ -679,7 +679,7 @@ Una vez configuradas las variables de entorno debemos instalar \textit{Node.js}\
 Con la instalación de \textit{Node.js} obtenemos a la vez el sistema de gestión de paquetes \textit{npm} que es necesario para instalar y manejar las dependencias del proyecto, así como las librerías y los paquetes necesarios. Además de \textit{npm}, necesitamos tener instalado otro manejador de paquetes llamado \textit{Yarn}\footnote{Descarga \textit{Yarn}: \url{https://yarnpkg.com/lang/en/}} , que se caracteriza por tener una velocidad mayor que \textit{npm} debido a que permite descargas en simultaneo.
 
 \vspace{5mm}
-Para verificar que tenemos \textit{Node.js}, \textit{npm} y \textit{Yarn} correctamente instalados, es necesario ejecutar en una consola de comandos las siguientes sentencias: 
+Para verificar que tenemos \textit{Node.js}, \textit{npm} y \textit{Yarn} correctamente instalados, es necesario ejecutar en una consola de comandos como en la Figura~\ref{fig:verificacion}: 
 \begin{figure}
   \centering
   \includegraphics{img_usadas/verificacion.png}
@@ -687,29 +687,183 @@ Para verificar que tenemos \textit{Node.js}, \textit{npm} y \textit{Yarn} correc
   \label{fig:verificacion}
 \end{figure}
 
-
-
-
+\vspace{20mm}
+Con estos pasos, tenemos todas las configuraciones y todos los paquetes necesarios instalados. Ahora es necesario arrancar el servidor de Liferay para tenerlo disponible, si es la primera vez que se ha arrancado, nos aparecerá una ventana de configuración para poder crearnos el usuario y su contraseña, además de poder configurar el idioma del portal. Una vez configurado el usuario y el idioma tendremos un portal disponible con la página principal como se ve en la Figura~\ref{fig:liferay_ini}. Con esto tendremos a disposición todos los componentes y elementos que vienen configurados por defecto con Liferay. Podremos crear páginas y componentes para organizar el portal de la manera deseada.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm, height=10cm]{img_usadas/liferay_ini.png}
+  \caption{Visualización inicial de la página principal del portal de Liferay}
+  \label{fig:liferay_ini}
+\end{figure}
 
 
 \section{Creación portlet React}
 \label{sec:creacion-portlet-react}
-------
+Una vez tenemos un servidor Liferay arrancado y en funcionamiento, podemos empezar a integrar React con Liferay. Para ello es necesario instalar un generador de \textit{Yeoman}\footnote{\url{https://yeoman.io/}}, la instalación se realiza con el siguiente comando: 
+\begin{verbatim}
+    npm install -g yo
+\end{verbatim}
+
+Con el generador de \textit{Yeoman} instalado, el siguiente paso es instalar el generador de los paquetes de Liferay (liferay-bundle) de la siguiente manera:
+\begin{verbatim}
+    npm install generator-liferay-bundle
+\end{verbatim}
+
+Con ambos generadores instalados, ya podemos crear el portlet de React con el comando 
+\begin{verbatim}
+    yo liferay-bundle
+\end{verbatim} 
+que nos permite elegir el tipo de proyecto que queremos crear como se muestra en la Figura~\ref{fig:liferay_type}.
+\begin{figure}[h]
+  \centering
+  \includegraphics{img_usadas/liferay-bundle-react.png}
+  \caption{Elección del tipo de proyecto}
+  \label{fig:liferay_type}
+\end{figure}
+
+El tipo de proyecto que queremos crear en este caso es "\textit{React based portlet}", al elegirlo debemos configurar las opciones que se muestran en la Figura~\ref{fig:liferay_generator_portlet}.
+\begin{figure}[t]
+  \centering
+  \includegraphics{img_usadas/liferay-bundle-generator.png}
+  \caption{Creación portlet React}
+  \label{fig:liferay_generator_portlet}
+\end{figure}
+
+En dicha Figura~\ref{fig:liferay_generator_portlet} podemos ver que al crear el proyecto debemos darle el nombre que queramos, en este caso "portletreact", la descripción del proyecto y la categoría en la que queremos que aparezca en el portal de Liferay, en este caso "\textit{Ejemplo}". 
+Además, nos pregunta si tenemos alguna instalación local de Liferay, que es la que hemos realizado anteriormente, al decirle "\textit{Yes}" nos pregunta sobre la localización de dicha instalación, donde debemos poner la ruta en la que está el \textit{tomcat} instalado en el apartado~\ref{sec:instalacion-de-componentes-necesarios}.
+
+Al generar un código de ejemplo, se generan los paquetes que vemos en la Figura~\ref{fig:liferay_generator_portlet} que nos permiten la conectividad entre React y Liferay. Por medio del fichero "\textit{package.json}" se declaran las dependencias del portlet como se puede ver en la Figura~\ref{fig:package_ini}. En el fichero "\textit{index.js}" se reciben los campos "\textit{contextPath}", que es la ruta del contexto donde se bajan los recursos estáticos del protlet, y "\textit{portletElementId}", que es el identificador del nodo que permite la conectividad con el framework para generar la interfaz de usuario.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=8cm, height=6cm]{img_usadas/package_ini.png}
+  \caption{Visualización del fichero "\textit{package.json}"}
+  \label{fig:package_ini}
+\end{figure}
 
 
-
+\vspace{5mm}
 \section{Desarrollo de la aplicación} 
 \label{sec:desarrollo-aplicacion}
----------------------
+Una vez hemos creado el portlet y tenemos todos los paquetes necesarios instalados, es hora de comenzar a desarrollar la aplicación. En este apartado se van a explicar las configuraciones iniciales necesarias para poder usar las librerías que permiten la generación de los gráficos, y las principales funciones utilizadas para obtener los datos que se van a mostrar.
 
+\vspace{5mm}
+El primer paso para desarrollar la aplicación es instalar las librerías que nos permiten desarrollar la aplicación utilizando React. Para instalar las librerías, recomiendo utilizar la herramienta \textit{Yarn}, comentada en el apartado~\ref{sec:instalacion-de-componentes-necesarios}, debido a que no da conflictos con las dependencias ya instaladas, por el contrario, si usamos \textit{npm} podemos llegar a tener algún tipo de conflicto.
+
+Las primeras librerías que debemos instalar son las que nos permiten programar utilizando \textit{ECMAScript}. Se instalan con los siguientes comandos: 
+\begin{verbatim}
+    yarn add eslint
+    yarn add babel-preset-es2015
+    yarn add babel-plugin-transform-class-properties
+\end{verbatim} 
+Para verificar que se han instalado bien las librerías, comprobamos que se han añadido al fichero \textit{"package.json"} tal y como se muestra en la Figura~\ref{fig:package_babelrc}
+\begin{figure}[h]
+  \centering
+  \includegraphics{img_usadas/package_babelrc.png}
+  \caption{Visualización de las librerías de \textit{ECMAScript} en el fichero \textit{"package.json"}}
+  \label{fig:package_babelrc}
+\end{figure}
+
+Una vez las librerías están instaladas, debemos modificar el fichero "\textit{.babelrc}" de la siguiente manera:
+\begin{verbatim}
+    {
+	        "presets": ["es2015", "react"],
+	        "plugins": ["transform-class-properties"]
+    }
+\end{verbatim}
+
+Con estas configuraciones ya se puede empezar a programar con React. El siguiente paso es instalar las librerías necesarias para generar los gráficos y transformar los datos recogidos de la \textit{API}. Estas librerías son "\textit{react-chartjs-2"}, "\textit{react-chartjs2"} y "\textit{chart.js"}. Se instalan usando los siguientes comandos: 
+\begin{verbatim}
+    yarn add react-chartjs-2
+    yarn add react-chartjs2
+    yarn add chart.js
+\end{verbatim} 
+Para verificar que se han instalado bien las librerías, comprobamos que se han añadido al fichero \textit{"package.json"} tal y como se muestra en la Figura~\ref{fig:package_chart}
+\begin{figure}[h]
+  \centering
+  \includegraphics{img_usadas/package_chart.png}
+  \caption{Visualización de las librerías en el fichero \textit{"package.json"}}
+  \label{fig:package_chart}
+\end{figure}
+
+Como podemos ver, con estas librerías ya se puede empezar a generar gráficos. El siguiente paso es obtener los datos de la \textit{API}. 
+
+En este proyecto se ha utilizado la \textit{API OpenWeatherMap}\footnote{\url{https://openweathermap.org/}}, en la cual podemos obtener los datos meteorológicos para el día actual, y los datos meteorológicos de una semana.
+Estos datos vienen en formato \textit{JSON}.
+
+\vspace{5mm}
+Para transformar estos datos en legibles, ha sido necesario emplear la librería "\textit{moment}", instalada con el siguiente comando: 
+\begin{verbatim}
+    yarn add moment
+\end{verbatim} 
+
+Para la transformación de los datos meteorológicos, se ha usado una función como se muestra en la Figura~\ref{fig:transform_day}.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=12cm, height=5cm]{img_usadas/transform_day.png}
+  \caption{Función para transformar los datos del \textit{JSON}}
+  \label{fig:transform_day}
+\end{figure}
+
+\vspace{5mm}
+Para la transformación de las horas del día se ha usado otra función, en la cual se ha usado la librería \textit{"moment"}, como podemos ver en la Figura~\ref{fig:transform_data}.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=10cm, height=6cm]{img_usadas/transform_data.png}
+  \caption{Función para transformar las horas del \textit{JSON}}
+  \label{fig:transform_data}
+\end{figure}
+
+Una vez obtenemos los datos legibles, ya podemos empezar a usarlos y a generar los gráficos con ellos. Estos gráficos se verán en el Capítulo~\ref{chap:resultados_obtenidos}.
 
 
 \section{Despliegue en Liferay} 
 \label{sec:despliegue-liferay}
----------------------
+Tras realizar el desarrollo del portlet, es hora de desplegarlo y construirlo en el portal de Liferay, para ello debemos tener el servidor arrancado. Antes de desplegarlo hay que construirlo, ejecutando el siguiente comando, en la ruta en la que tenemos guardado el proyecto:
+\begin{verbatim}
+    npm run build
+\end{verbatim} 
+Este comando construye las rutas que hay en el proyecto y construye las dependencias que haya en el "\textit{package.json}". La ejecución del comando se puede ver en la Figura~\ref{fig:npm_build}.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=12cm, height=5cm]{img_usadas/npm_build.png}
+  \caption{Ejecución del comando \textit{"build"}}
+  \label{fig:npm_build}
+\end{figure}
 
+Tras construir las dependencias y las rutas del proyecto, hay que desplegar el proyecto en Liferay con el siguiente comando: 
+\begin{verbatim}
+    npm run deploy
+\end{verbatim}
+Este comando realiza el despliegue del portlet a Liferay, su ejecución se muestra en la Figura~\ref{fig:deploy}.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=11cm, height=8cm]{img_usadas/deploy.png}
+  \caption{Ejecución del comando \textit{"deploy"}}
+  \label{fig:deploy}
+\end{figure}
 
+Como podemos ver, al hacer "\textit{deploy}" se hace lo mismo que en "\textit{build"}, añadiendo el despliegue al \textit{tomcat} configurado en el apartado~\ref{sec:creacion-portlet-react} donde introducimos la ruta en la que lo teníamos.
 
+\vspace{5mm}
+Con el servidor arrancado, una vez se completa el despligue, en la consola deberá aparecer el mensaje que se ve en la Figura~\ref{fig:started}.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{img_usadas/started.png}
+  \caption{Visualización de la consola del servidor al desplegar}
+  \label{fig:started}
+\end{figure}
+
+\vspace{5mm}
+Una vez vemos el mensaje "STARTED" dentro de la consola, el portlet estará disponible en el portal de Liferay, en la categoría que introdujimos en el apartado~\ref{sec:creacion-portlet-react}. En este caso, la categoría es "\textit{Ejemplo}", por lo que, una vez logueados, seleccionamos la categoría en la sección de configuración de los contenidos de Liferay y arrastramos el portlet, de la forma que vemos en la Figura~\ref{fig:liferay_ex}.
+\begin{figure}[h]
+  \centering
+  \includegraphics{img_usadas/liferay_ex.png}
+  \caption{Despliegue del portlet en Liferay}
+  \label{fig:liferay_ex}
+\end{figure}
+
+\vspace{5mm}
+Posicionamos el componente en la zona que queramos del portal y tendríamos el portlet listo para visualizarse de la forma que veremos en el Capítulo ~\ref{chap:resultados_obtenidos}.
 
 
 
@@ -720,6 +874,7 @@ Para verificar que tenemos \textit{Node.js}, \textit{npm} y \textit{Yarn} correc
 
 \cleardoublepage
 \chapter{Resultados obtenidos}
+\label{chap:resultados_obtenidos}
 -----------------------------
 
 
