@@ -224,7 +224,7 @@ Los gestores de contenidos permiten la creación, manipulación y publicación d
 La mayoría de las compañías emplean estos gestores de contenidos para crear la Intranet de usuarios de sus clientes debido a que proporciona ayuda a la hora de desarrollar soluciones empresariales, con resultados inmediatos y a largo plazo, ofreciendo un framework de desarrollo capaz de adaptarse a las necesidades requeridas.
 
 \vspace{5mm} %5mm vertical space
-El principal inconveniente de emplear este método para la creación de una Intranet es que el código fuente es más complejo que emplear un desarrollo a medida para dicha página. Este inconveniente lo podemos evitar implantando JavaScript y sus librerías en el gestor de contenidos. 
+El principal inconveniente de emplear este método para la creación de una Intranet es que el código fuente es más complejo que emplear un desarrollo a medida para dicha página. Este inconveniente lo podemos evitar implantando JavaScript y sus bibliotecas en el gestor de contenidos. 
 
 \vspace{5mm} %5mm vertical space
 En un gestor de contenidos cada página del portal actúa como un contenedor de diferentes aplicaciones, y si, por ejemplo, en una página web hay varias subpáginas se podría usar el mismo contenido en todas ellas si fuera necesario,  además de poder eliminarlo de una subpágina en un momento dado o cambiarlo de lugar. De este modo, al tener integrado React con el gestor de contenidos, se puede añadir la web creada con React en cualquier parte de nuestro portal, incluso se podría tener la web en diferentes subpáginas sin necesidad de repetir el código.
@@ -235,20 +235,20 @@ Los portlets con React o con JavaScript se pueden desplegar en Liferay por otros
 
 \section{Motivaci\'on}
 \label{sec:motivacion}
-Este proyecto ha sido realizado en colaboración con la empresa \textit{Everis}\footnote{\url{https://www.everis.com/spain/es/home-1}}, en la que estoy trabajando actualmente. En dicha empresa, he trabajado en varios proyectos llevados a cabo por el gestor de contenidos de Liferay, muy utilizado en el mundo empresarial como base de portales públicos y privados, tales como intranets o portales de cliente. Por norma general, todos los componentes desarrollados sobre la tecnología Liferay se desarrollan en Java.
+Este proyecto ha sido realizado en colaboración con la empresa \textit{Everis}\footnote{\url{https://www.everis.com/spain/es/home-1}}, en la que estoy trabajando actualmente. He trabajado en dicha empresa en varios proyectos llevados a cabo por el gestor de contenidos de Liferay, muy utilizado en el mundo empresarial como base de portales públicos y privados, tales como intranets o portales de cliente. Por norma general, todos los componentes desarrollados sobre la tecnología Liferay se desarrollan en Java.
 
 \vspace{5mm} %5mm vertical space
 La integración de React en Liferay era un trabajo pendiente de hacer que podría incluir grandes mejoras en los proyectos con las que trabaja la empresa, por lo que ha sido una gran oportunidad de aprendizaje en dicha empresa. React es una de las más populares bibliotecas de JavaScript. En portales de Liferay, React sería muy importante a la hora de crear componentes debido a la velocidad y fluidez de las peticiones bajo demanda. Estos componentes son reutilizables en todo tipo de portales y proyectos desarrollados por Liferay, lo que es una gran ventaja.
 
 \vspace{5mm} %5mm vertical space
-React es una de las plataformas más utilizadas por las empresas, por encima de \textit{Angular}, que hasta hace poco dominaba el mercado por encima de React, por lo que muchas empresas piden desarrollos llevados a cabo con React, por lo que era una buena oportunidad para incorporar esta librería de JavaScript en la plataforma Liferay.
+React es una de las plataformas más utilizadas por las empresas, por encima de \textit{Angular}, que hasta hace poco DOMinaba el mercado por encima de React, por lo que muchas empresas piden desarrollos llevados a cabo con React, por lo que era una buena oportunidad para incorporar esta biblioteca de JavaScript en la plataforma Liferay.
 
 \vspace{5mm} %5mm vertical space
-Como hemos visto, React es un framework que está ganando terreno y está incrementando su uso en el mercado, tal y como podemos ver en la Figura~\ref{fig:react_mercado}, en la cual podemos ver la comparativa, realizada por Jobfluent\footnote{\url{https://www.jobfluent.com/es}}, entre las librerías de React, Angular y VUE, donde podemos ver el crecimiento de React respecto al resto de frameworks.
+Como hemos visto, React es un framework que está ganando terreno y está incrementando su uso en el mercado, tal y como podemos ver en la Figura~\ref{fig:react_mercado}, en la cual podemos ver la comparativa, realizada por Jobfluent\footnote{\url{https://www.jobfluent.com/es}}, entre las bibliotecas de React, Angular y VUE, donde podemos ver el crecimiento de React respecto al resto de frameworks.
 \begin{figure}[h]
   \centering
   \includegraphics{img_usadas/react_mercado.png}
-  \caption{Comparativa entre las librerías más populares de JavaScript en el mercado}
+  \caption{Comparativa entre las bibliotecas más populares de JavaScript en el mercado}
   \label{fig:react_mercado}
 \end{figure}
 
@@ -300,27 +300,27 @@ En este apartado se va a describir la estructura de la memoria, que se ha dividi
 \section{Objetivo general} % título de sección (se muestra)
 \label{sec:objetivo-general} % identificador de sección (no se muestra, es para poder referenciarla)
 
-El objetivo principal de este proyecto ha sido poder integrar Liferay con el framework de React, pudiendo utilizar sus bibliotecas y funciones. Para ello ha sido necesario poder conocer Liferay y su funcionamiento respecto a módulos o portlets pudiendo configurar sus dependencias. Estas dependencias son esenciales a la hora de conectar el gestor de contenidos con React, debido a que al ser una biblioteca de JavaScript no es posible su utilización dentro de Liferay.
+El objetivo principal de este proyecto es integrar Liferay con el framework de React, pudiendo utilizar sus bibliotecas y funciones. Para ello ha sido necesario poder conocer Liferay y su funcionamiento respecto a módulos o portlets pudiendo configurar sus dependencias. Estas dependencias son esenciales a la hora de conectar el gestor de contenidos con React, debido a que al ser una biblioteca de JavaScript no es posible su utilización dentro de Liferay.
 
 La utilización sólo es posible a partir de la versión 7.1 de Liferay, en la cual tenemos un plugin que permite la integración. Hay varias formas de realizar dicha integración:
 \begin{itemize}
     \item Configurando las dependencias a mano y modificando los ficheros necesarios para poder conectar React.
-    \item Con una serie de comandos \textit{npm}\footnote{\url{https://www.npmjs.com}} en los cuales se configuran las dependencias automáticamente.
+    \item Con una serie de instrucciones \textit{npm}\footnote{\url{https://www.npmjs.com}} en los cuales se configuran las dependencias automáticamente.
 \end{itemize}
 
 En este caso hemos optado por la segunda opción debido a que es más rápida de configurar y más asequible, aunque sea necesario realizar varios pasos para la instalación de todos los paquetes necesarios, dicha instalación se explicará en el capítulo~\ref{sec:estado-del-arte}.
 
 \section{Objetivos secundarios}
 \label{sec:objetivos-secundarios}
-En el camino hasta conseguir el objetivo principal, ha sido necesario tener que comenzar a formarme con la librería React y con el gestor Liferay. Este aprendizaje me ha resultado interesante debido a dos razones:
+En el camino hasta conseguir el objetivo principal, ha sido formarme en la biblioteca React y con el gestor Liferay. Este aprendizaje me ha resultado interesante debido a dos razones:
 
 \begin{enumerate}
-    \item La formación con Liferay debido a la posibilidad que te ofrece empresarialmente tener conocimientos sobre este gestor, ya que es altamente utilizado por las empresas de este sector.
-    \item La formación con JavaScript, y en especial con la librería React, debido a que últimamente está siendo muy demandado por las empresas y muy utilizado en el mercado.
+    \item La formación en Liferay debido a la posibilidad que te ofrece empresarialmente tener conocimientos sobre este gestor, ya que es altamente utilizado por las empresas de este sector.
+    \item La formación en JavaScript, y en especial en la biblioteca React, debido a que últimamente está siendo muy demandado por las empresas y muy utilizado en el mercado.
     
 \end{enumerate}
 
-Otro de los objetivos a la hora de realizar este proyecto era poder familiarizarme con las dos tecnologías debido a que en muchos proyectos utilizar ambas tecnologías sería de gran ayuda.
+Otro de los subobjetivos a la hora de realizar este proyecto ha sido poder familiarizarme con las dos tecnologías debido a que en muchos proyectos utilizar ambas tecnologías sería de gran ayuda.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -555,10 +555,10 @@ Los portlets tienen, además, diferentes modos que indican la función que se es
 
 \section{JavaScript}
 \label{subsec:javascript}
-Para poder hablar de React, framework sobre el que está desarrollado el proyecto, es necesario saber unos conocimientos básicos de JavaScript. Es un lenguaje de programación, que está presente en muchos navegadores web, introducido en el año 1995 como una forma de añadir programas a una página web en el navegador \textit{Netscape} \textit{Navigator}. Desde entonces es un lenguaje muy utilizado, usado en el 90\% de páginas web, que hace posible aplicaciones web modernas y dinámicas~\cite{js_book}.
+Para poder hablar de React, framework sobre el que está desarrollado el proyecto, es necesario saber unos conocimientos básicos de JavaScript. Es un lenguaje de programación, que está presente en muchos navegadores web, fue introducido en el año 1995 como una forma de añadir programas a una página web en el navegador \textit{Netscape} \textit{Navigator}. Desde entonces es un lenguaje muy utilizado, usado en el 90\% de páginas web, que hace posible aplicaciones web modernas y dinámicas~\cite{js_book}.
 
 \vspace{5mm}
-A pesar de su nombre, JavaScript no tiene nada que ver con el lenguaje de programación Java, el nombre se debe a una estrategia de marketing debido a la importancia del lenguaje Java en esos momentos. Es un lenguaje de programación que no necesita ser compilado para probar su funcionamiento, simplemente se puede probar el código en el navegador directamente. JavaScript sigue el estándar \textit{ECMAScript} para que sea independiente de cualquier empresa.
+A pesar de su nombre, JavaScript no tiene nada que ver con el lenguaje de programación Java. El nombre se debe a una estrategia de marketing debido a la importancia del lenguaje Java en esos momentos. Es un lenguaje de programación que no necesita ser compilado para probar su funcionamiento, simplemente se puede probar el código en el navegador directamente. JavaScript sigue el estándar \textit{ECMAScript} para que sea independiente de cualquier empresa.
 
 \vspace{5mm}
 Las características de JavaScript son:
@@ -576,43 +576,43 @@ Es soportado por todos los navegadores, a partir de la versión \textit{ECMAScri
 
 \section{React}
 \label{subsec:react}
-Este proyecto de fin de carrera está basado principalmente en conectar las tecnologías de Liferay y de React, para conseguir tener un portlet programado con el lenguaje de React en Liferay.
+Este proyecto de fin de grado está basado principalmente en conectar las tecnologías de Liferay y de React, para conseguir tener un portlet programado con el lenguaje de React en Liferay.
 
 \vspace{5mm}
-React es una de las librerías de JavaScript que permite manejar de forma eficiente la interfaz de usuario de las aplicaciones web. Su desarrollador fue \textit{Facebook} y fue creado para resolver las propias necesidades de la compañía con el mantenimiento del código de los anuncios. Actualmente sigue siendo utilizado en \textit{Facebook} para darle soporte a la página, así como realizar actualizaciones de forma permanente~\cite{react_misc}.
+React es una de las bibliotecas de JavaScript que permite manejar de forma eficiente la interfaz de usuario de las aplicaciones web. Su desarrollador fue \textit{Facebook} y fue creado para resolver las propias necesidades de la compañía con el mantenimiento del código de los anuncios. Actualmente sigue siendo utilizado en \textit{Facebook} para darle soporte a la página, así como realizar actualizaciones de forma permanente~\cite{react_misc}.
 
 \vspace{5mm}
 Sus principales ventajas son:
 
 \begin{itemize}
-\item Su gran ecosistema: Es una de las librerías con mayor trayectoria, se generaron muchas librerías extendiendo sus características y potencialidades, permitiendo realizar todo tipo de programas que nos propongamos.
-\item Su estabilidad y alta compatibilidad: Es una librería que hace evolucionar todas sus versiones y sus librerías que hace que no existan quiebres de compatibilidad entre ellas generando una gran estabilidad.
-\item Su performance: Es una librería liviana que genera tiempos de carga inicial muy rápidos. Además, la actualización de pantalla es muy rápida, lo que permite renderizaciones parciales e inteligentes mediante su Virtual Dom y el proceso de reconciliación.
+\item Su gran ecosistema: Es una de las bibliotecas con mayor trayectoria, se generaron muchas bibliotecas extendiendo sus características y potencialidades, permitiendo realizar todo tipo de programas que nos propongamos.
+\item Su estabilidad y alta compatibilidad: Es una biblioteca que hace evolucionar todas sus versiones y sus bibliotecas que hace que no existan quiebres de compatibilidad entre ellas generando una gran estabilidad.
+\item Su rendimiento: Es una biblioteca liviana que genera tiempos de carga inicial muy rápidos. Además, la actualización de pantalla es muy rápida, lo que permite renderizaciones parciales e inteligentes mediante su Virtual DOM y el proceso de reconciliación.
 \end{itemize}
 
-Debido a estos motivos React es muy sólida y fundamentada. Representa, a nivel de arquitectura en el patrón MVC, la V del modo Vista, lo que hace que se pueda combinar con otras librerías de JavaScript~\cite{react_book}.
+Debido a estos motivos React es muy sólida y fundamentada. Representa, a nivel de arquitectura en el patrón MVC, la V del modo Vista, lo que hace que se pueda combinar con otras bibliotecas de JavaScript~\cite{react_book}.
 
 \vspace{5mm}
-React es una librería de código abierto, declarativa, eficiente y flexible que permite construir interfaces de usuario, componentes interactivos y reutilizables, con el objetivo de facilitar el desarrollo de \textit{SPA}\footnote{Single Page Applications}, obteniendo un gran rendimiento. Es una librería que está mantenida por desarrolladores de \textit{Facebook} e \textit{Instagram}, al igual que por desarrolladores independientes. Los componentes interactivos se crean de forma sencilla diseñando vistas simples para cada usuario en la aplicación que hacen que tu código sea más predecible y más fácil de depurar. 
+React es una biblioteca de código abierto, declarativa, eficiente y flexible que permite construir interfaces de usuario, componentes interactivos y reutilizables, con el objetivo de facilitar el desarrollo de \textit{SPA}\footnote{Single Page Applications}, obteniendo un gran rendimiento. Es una biblioteca que está mantenida por desarrolladores de \textit{Facebook} e \textit{Instagram}, al igual que por desarrolladores independientes. Los componentes interactivos se crean de forma sencilla diseñando vistas simples para cada usuario en la aplicación que hacen que tu código sea más predecible y más fácil de depurar. 
 
 \vspace{5mm}
 El nacimiento de React comienza en 2011 cuando Pete Hunt y unos desarrolladores de \textit{Facebook} crean un port de \textit{XHP} en una aplicación \textit{SPA}. Este tipo de aplicación requiere un gran número de peticiones al servidor que \textit{XHP} no conseguía resolver, por lo que los desarrolladores solicitaron usar \textit{XHP} en el navegador con JavaScript, dando lugar a ReactJS.
 
 \vspace{5mm}
-Otras librerías parecidas a React son \textit{Meteor} y \textit{Angular}, que permiten que se actualice de forma automática la interfaz de usuario cuando los datos de la aplicación cambian. La diferencia entre estas librerías y React es la forma en la que se programa con React, debido a que se utiliza una programación orientada a videojuegos, mientras que el resto se realiza una programación orientada al sistema \textit{“data-binding”}. Esta diferencia hace que con React tengamos una renderización parcial inmediata, mientras que el resto tiene una renderización persistente. 
+Otras bibliotecas parecidas a React son \textit{Meteor} y \textit{Angular}, que permiten que se actualice de forma automática la interfaz de usuario cuando los datos de la aplicación cambian. La diferencia entre estas bibliotecas y React es la forma en la que se programa con React, debido a que se utiliza una programación orientada a videojuegos, mientras que el resto se realiza una programación orientada al sistema \textit{“data-binding”}. Esta diferencia hace que con React tengamos una renderización parcial inmediata, mientras que el resto tiene una renderización persistente. 
 
-Al tener una renderización parcial e inmediata, se renderiza todo con cada cambio que se haga en el código de forma automática, por lo que React es capaz de autogestionarse. Esto se realiza mediante su Virtual Dom, donde está contenido la estructura de datos, el sistema de eventos sintéticos y el gestor de memoria. Con cada cambio en un componente de React, los pasos que se realizan son los siguientes~\cite{react_book}:
+Al tener una renderización parcial e inmediata, se renderiza todo con cada cambio que se haga en el código de forma automática, por lo que React es capaz de autogestionarse. Esto se realiza mediante su Virtual DOM, donde está contenido la estructura de datos, el sistema de eventos sintéticos y el gestor de memoria. Con cada cambio en un componente de React, los pasos que se realizan son los siguientes~\cite{react_book}:
 
 \begin{enumerate}
-\item Se genera un nuevo árbol Virtual Dom.
-\item Se compara con el Virtual Dom previo.
+\item Se genera un nuevo árbol Virtual DOM.
+\item Se compara con el Virtual DOM previo.
 \item Se deciden cuáles son los cambios mínimos a realizar.
 \item Se mandan los cambios a la cola.
 \item Se procesan los cambios en el navegador.
 \end{enumerate}
 
 \vspace{5mm}
-En el Virtual Dom tenemos el sistema de eventos sintéticos, que quiere decir que React tiene su propio sistema de eventos que crea un único manejador de evento nativo en el nivel superior de la estructura de cada componente, por lo que no es necesario utilizar otras librerías como \textit{jQuery}\footnote{\url{https://jquery.com/}}, lo que hace que tengamos menos código que desarrollar. El sistema está normalizado por lo que es operable en todos los navegadores, además, es capaz de diferenciar entre eventos “\textit{desktop}” (click con el ratón) y eventos móviles (táctil de la pantalla). 
+En el Virtual DOM tenemos el sistema de eventos sintéticos, que quiere decir que React tiene su propio sistema de eventos que crea un único manejador de evento nativo en el nivel superior de la estructura de cada componente, por lo que no es necesario utilizar otras bibliotecas como \textit{jQuery}\footnote{\url{https://jquery.com/}}, lo que hace que tengamos menos código que desarrollar. El sistema está normalizado por lo que es operable en todos los navegadores, además, es capaz de diferenciar entre eventos “\textit{desktop}” (click con el ratón) y eventos móviles (táctil de la pantalla). 
 
 \vspace{5mm}
 React ayuda a los desarrolladores a crear aplicaciones web que utilizan un gran intercambio de datos, preocupándose solamente de la interfaz de usuario de la aplicación. El código programado en React se realiza a través de componentes, que se renderizan automáticamente, como se ha comentado anteriormente. Una interfaz de usuario es creada a partir de componentes, que encapsulan el funcionamiento y la presentación. Los componentes se basan en otros componentes para solucionar las necesidades más complejas. Al estar basado en componentes, se pueden pasar datos a través de la aplicación sin modificar el estado fuera del DOM.
@@ -621,20 +621,20 @@ React ayuda a los desarrolladores a crear aplicaciones web que utilizan un gran 
 Otra característica de React es que es isomórfico, que quiere decir que con un mismo código se puede renderizar tanto en cliente como en el servidor disminuyendo la carga de trabajo para realizar aplicaciones web para buscadores. Todo esto se consigue gracias a \textit{Node.js} y se puede reutilizar en la parte de presentación y en la lógica de negocio~\cite{react_manual}.
 
 \vspace{5mm}
-Esta librería está siendo actualmente utilizada por grandes marcas como \textit{Airbnb, Sony, Netflix, Yahoo, BCC, Dropbox} y, las ya comentadas, \textit{Facebook} e \textit{Instagram} entre otras.
+Esta biblioteca está siendo actualmente utilizada por grandes marcas como \textit{Airbnb, Sony, Netflix, Yahoo, BCC, Dropbox} y, las ya comentadas, \textit{Facebook} e \textit{Instagram} entre otras.
 
 
 \vspace{5mm}
-React al ser una librería de código abierto permite que sea modificada por cualquier persona con los suficientes conocimientos, para incluir mejoras o cambios. Estas modificaciones se pueden realizar modificando el código que subió \textit{Facebook} a un repositorio de \textit{GitHub} para facilitar a los desarrolladores poder implementar estos cambios.
+React al ser una biblioteca de código abierto permite que sea modificada por cualquier persona con los suficientes conocimientos, para incluir mejoras o cambios. Estas modificaciones se pueden realizar modificando el código que subió \textit{Facebook} a un repositorio de \textit{GitHub} para facilitar a los desarrolladores poder implementar estos cambios.
 
 
 
 \section{JSON}
 \label{subsec:json}
-Para poder realizar este trabajo ha sido necesario poder transformar los datos que venían en formato JSON y transformarlos en datos legibles. JSON (JavaScript Object Notation) es un formato de intercambio de datos. Se trata de un subconjunto del lenguaje de programación JavaScript, es un formato de texto que es independiente del lenguaje pero utiliza convenciones que son conocidos por los desarrolladores~\cite{json_misc}.
+Para poder realizar este trabajo ha sido necesario poder transformar los datos que venían en formato JSON y transformarlos en datos legibles. JSON (JavaScript Object Notation) es un formato de intercambio de datos. Se trata de una estructura de datos siguiendo las pautas del lenguaje de programación JavaScript. El resultado es un formato de texto que es independiente del lenguaje, pero que utiliza convenciones que son conocidos por los desarrolladores~\cite{json_misc}.
 
 \vspace{5mm}
-Es un formato que fue definido por Douglas Crockford a finales de 2002. En poco tiempo el uso del formato incrementó, debido a su sencillez y facilidad de uso, y surgieron implementaciones para todos los lenguajes de programación. 
+JSON fue definido por Douglas Crockford a finales de 2002. En poco tiempo el uso del formato incrementó, debido a su sencillez y facilidad de uso, y surgieron implementaciones para todos los lenguajes de programación. 
 
 \vspace{5mm}
 Sus características son:
@@ -646,9 +646,9 @@ Sus características son:
 \end{itemize}
 
 \vspace{5mm}
-JSON es un lenguaje ligero para almacenar y transportar datos que se utiliza cuando un servidor envía los datos a una página web. Es un lenguaje autodescriptivo y fácil de entender. Cuando se intercambian datos entre el servidor y la página web, estos datos pueden ser texto, lo que hace que podamos convertir el objeto en JSON, y enviarlo al servidor, o convertir el JSON en objeto para que pueda ser tratado, como en este caso, sin parsear ni traducir de manera difícil.
+JSON es una notación ligera para almacenar y transportar datos que se utiliza cuando un servidor envía los datos a una página web. Es un lenguaje autodescriptivo y fácil de entender. Cuando se intercambian datos entre el servidor y la página web, estos datos pueden ser texto, lo que hace que podamos convertir el objeto en JSON, y enviarlo al servidor, o convertir el JSON en objeto para que pueda ser tratado, como en este caso, sin parsear ni traducir de manera difícil.
 
-Es un lenguaje fácil de leer y escribir por las personas, y fácil de interpretar y analizar para para las maquinas. Es un lenguaje más pequeño y más rápido de analizar que el formato \textit{XML}\footnote{eXtensible Markup Language}. Estas propiedades hacen que sea un lenguaje adecuado para el intercambio de datos. 
+Es, asimismo, una notación fácil de leer y escribir por las personas, y fácil de interpretar y analizar para para las maquinas. Es un lenguaje más pequeño y más rápido de analizar que el formato \textit{XML}\footnote{eXtensible Markup Language}. Estas propiedades hacen que sea una notación adecuada para el intercambio de datos. 
 
 \vspace{5mm}
 En JSON existen varios tipos de elementos, entre ellos las matrices (arrays) y los objetos (objects). 
@@ -698,7 +698,7 @@ Lo primero que debemos hacer es descargar es el \textit{JDK} y el \textit{JRE}\f
 Una vez configuradas las variables de entorno debemos instalar \textit{Node.js}\footnote{Descarga \textit{Node.js}: \url{https://nodejs.org/en/}} , que es necesario para poder utilizar React. \textit{Node.js} es un entorno de ejecución de código abierto para \textit{JavaScript} construido por el motor de \textit{Chrome} y orientado a eventos asíncronos. Proporciona un entorno de ejecución del lado del servidor que compila y ejecuta a velocidades muy altas. Se ejecuta para cada conexión y si no hay conexiones ejecutando \textit{Node.js} no se ejecuta. Esto hace que no haya bloqueos de procesos debido a que no existen los bloqueos, lo que hace que se desarrollen sistemas escalables.
 
 \vspace{5mm}
-Con la instalación de \textit{Node.js} obtenemos a la vez el sistema de gestión de paquetes \textit{npm} que es necesario para instalar y manejar las dependencias del proyecto, así como las librerías y los paquetes necesarios. Además de \textit{npm}, necesitamos tener instalado otro manejador de paquetes llamado \textit{Yarn}\footnote{Descarga \textit{Yarn}: \url{https://yarnpkg.com/lang/en/}} , que se caracteriza por tener una velocidad mayor que \textit{npm} debido a que permite descargas en simultaneo.
+Con la instalación de \textit{Node.js} obtenemos a la vez el sistema de gestión de paquetes \textit{npm} que es necesario para instalar y manejar las dependencias del proyecto, así como las bibliotecas y los paquetes necesarios. Además de \textit{npm}, necesitamos tener instalado otro manejador de paquetes llamado \textit{Yarn}\footnote{Descarga \textit{Yarn}: \url{https://yarnpkg.com/lang/en/}} , que se caracteriza por tener una velocidad mayor que \textit{npm} debido a que permite descargas en simultaneo.
 
 \vspace{5mm}
 Para verificar que tenemos \textit{Node.js}, \textit{npm} y \textit{Yarn} correctamente instalados, es necesario ejecutar en una consola de comandos como en la Figura~\ref{fig:verificacion}.
@@ -743,7 +743,7 @@ que nos permite elegir el tipo de proyecto que queremos crear como se muestra en
   \label{fig:liferay_type}
 \end{figure}
 
-El tipo de proyecto que queremos crear en este caso es "\textit{React based portlet}", al elegirlo debemos configurar las opciones que se muestran en la Figura~\ref{fig:liferay_generator_portlet}.
+El tipo de proyecto que queremos crear en este caso es ``\textit{React based portlet}". Una vez elegido, debemos configurar las opciones que se muestran en la Figura~\ref{fig:liferay_generator_portlet}.
 \begin{figure}[t]
   \centering
   \includegraphics{img_usadas/liferay-bundle-generator.png}
@@ -751,14 +751,14 @@ El tipo de proyecto que queremos crear en este caso es "\textit{React based port
   \label{fig:liferay_generator_portlet}
 \end{figure}
 
-En dicha Figura~\ref{fig:liferay_generator_portlet} podemos ver que al crear el proyecto debemos darle el nombre que queramos, en este caso "portletreact", la descripción del proyecto y la categoría en la que queremos que aparezca en el portal de Liferay, en este caso "\textit{Ejemplo}". 
-Además, nos pregunta si tenemos alguna instalación local de Liferay, que es la que hemos realizado anteriormente, al decirle "\textit{Yes}" nos pregunta sobre la localización de dicha instalación, donde debemos poner la ruta en la que está el \textit{tomcat} instalado en el apartado~\ref{sec:instalacion-de-componentes-necesarios}.
+En dicha Figura~\ref{fig:liferay_generator_portlet} podemos ver que al crear el proyecto debemos darle el nombre que queramos, en este caso ``portletreact", la descripción del proyecto y la categoría en la que queremos que aparezca en el portal de Liferay, en este caso ``\textit{Ejemplo}". 
+Además, nos pregunta si tenemos alguna instalación local de Liferay, que es la que hemos realizado anteriormente, al decirle ``\textit{Yes}" \ nos pregunta sobre la localización de dicha instalación en la que habemos de poner la ruta en la que está el \textit{tomcat} instalado en el apartado~\ref{sec:instalacion-de-componentes-necesarios}.
 
-Al generar un código de ejemplo, se generan los paquetes que vemos en la Figura~\ref{fig:liferay_generator_portlet} que nos permiten la conectividad entre React y Liferay. Por medio del fichero "\textit{package.json}" se declaran las dependencias del portlet como se puede ver en la Figura~\ref{fig:package_ini}. En el fichero "\textit{index.js}" se reciben los campos "\textit{contextPath}", que es la ruta del contexto donde se bajan los recursos estáticos del portlet, y "\textit{portletElementId}", que es el identificador del nodo que permite la conectividad con el framework para generar la interfaz de usuario.
+Al generar un código de ejemplo, se generan los paquetes que vemos en la Figura~\ref{fig:liferay_generator_portlet} que nos permiten la conectividad entre React y Liferay. Por medio del fichero ``\textit{package.json}" se declaran las dependencias del portlet como se puede ver en la Figura~\ref{fig:package_ini}. En el fichero ``\textit{index.js}" se reciben los campos ``\textit{contextPath}", que es la ruta del contexto donde se bajan los recursos estáticos del portlet, y ``\textit{portletElementId}", que es el identificador del nodo que permite la conectividad con el framework para generar la interfaz de usuario.
 \begin{figure}[h]
   \centering
   \includegraphics[width=8cm, height=6cm]{img_usadas/package_ini.png}
-  \caption{Visualización del fichero "\textit{package.json}"}
+  \caption{Visualización del fichero ``\textit{package.json}"}
   \label{fig:package_ini}
 \end{figure}
 
@@ -766,26 +766,26 @@ Al generar un código de ejemplo, se generan los paquetes que vemos en la Figura
 \vspace{5mm}
 \section{Desarrollo de la aplicación} 
 \label{sec:desarrollo-aplicacion}
-Una vez hemos creado el portlet y tenemos todos los paquetes necesarios instalados, es hora de comenzar a desarrollar la aplicación. En este apartado se van a explicar las configuraciones iniciales necesarias para poder usar las librerías que permiten la generación de los gráficos, y las principales funciones utilizadas para obtener los datos que se van a mostrar.
+Una vez hemos creado el portlet y tenemos todos los paquetes necesarios instalados, es hora de comenzar a desarrollar la aplicación. En este apartado se van a explicar las configuraciones iniciales necesarias para poder usar las bibliotecas que permiten la generación de los gráficos, y las principales funciones utilizadas para obtener los datos que se van a mostrar.
 
 \vspace{5mm}
-El primer paso para desarrollar la aplicación es instalar las librerías que nos permiten desarrollar la aplicación utilizando React. Para instalar las librerías, recomiendo utilizar la herramienta \textit{Yarn}, comentada en el apartado~\ref{sec:instalacion-de-componentes-necesarios}, debido a que no da conflictos con las dependencias ya instaladas, por el contrario, si usamos \textit{npm} podemos llegar a tener algún tipo de conflicto.
+El primer paso para desarrollar la aplicación es instalar las bibliotecas que nos permiten desarrollar la aplicación utilizando React. Para instalar las bibliotecas, recomiendo utilizar la herramienta \textit{Yarn}, comentada en el apartado~\ref{sec:instalacion-de-componentes-necesarios}, debido a que no da conflictos con las dependencias ya instaladas, por el contrario, si usamos \textit{npm} podemos llegar a tener algún tipo de conflicto.
 
-Las primeras librerías que debemos instalar son las que nos permiten programar utilizando \textit{ECMAScript}. Se instalan con los siguientes comandos: 
+Las primeras bibliotecas que debemos instalar son las que nos permiten programar utilizando \textit{ECMAScript}. Se instalan con los siguientes comandos: 
 \begin{verbatim}
     yarn add eslint
     yarn add babel-preset-es2015
     yarn add babel-plugin-transform-class-properties
 \end{verbatim} 
-Para verificar que se han instalado bien las librerías, comprobamos que se han añadido al fichero \textit{"package.json"} tal y como se muestra en la Figura~\ref{fig:package_babelrc}.
+Para verificar que se han instalado bien las bibliotecas, comprobamos que se han añadido al fichero \textit{``package.json"} tal y como se muestra en la Figura~\ref{fig:package_babelrc}.
 \begin{figure}[h]
   \centering
   \includegraphics{img_usadas/package_babelrc.png}
-  \caption{Visualización de las librerías de \textit{ECMAScript} en el fichero \textit{"package.json"}}
+  \caption{Visualización de las bibliotecas de \textit{ECMAScript} en el fichero \textit{``package.json"}}
   \label{fig:package_babelrc}
 \end{figure}
 
-Una vez las librerías están instaladas, debemos modificar el fichero "\textit{.babelrc}" de la siguiente manera:
+Una vez las bibliotecas están instaladas, debemos modificar el fichero ``\textit{.babelrc}" \ de la siguiente manera:
 \begin{verbatim}
     {
 	        "presets": ["es2015", "react"],
@@ -793,27 +793,27 @@ Una vez las librerías están instaladas, debemos modificar el fichero "\textit{
     }
 \end{verbatim}
 
-Con estas configuraciones ya se puede empezar a programar con React. El siguiente paso es instalar las librerías necesarias para generar los gráficos y transformar los datos recogidos de la \textit{API}. Estas librerías son "\textit{react-chartjs-2"}, "\textit{react-chartjs2"} y "\textit{chart.js"}. Se instalan usando los siguientes comandos: 
+Con estas configuraciones ya se puede empezar a programar con React. El siguiente paso es instalar las bibliotecas necesarias para generar los gráficos y transformar los datos recogidos de la \textit{API}. Estas bibliotecas son ``\textit{react-chartjs-2"}, ``\textit{react-chartjs2"} y ``\textit{chart.js"}. Se instalan usando los siguientes comandos: 
 \begin{verbatim}
     yarn add react-chartjs-2
     yarn add react-chartjs2
     yarn add chart.js
 \end{verbatim} 
-Para verificar que se han instalado bien las librerías, comprobamos que se han añadido al fichero \textit{"package.json"} tal y como se muestra en la Figura~\ref{fig:package_chart}.
+Para verificar que se han instalado bien las bibliotecas, comprobamos que se han añadido al fichero \textit{``package.json"} tal y como se muestra en la Figura~\ref{fig:package_chart}.
 \begin{figure}[h]
   \centering
   \includegraphics{img_usadas/package_chart.png}
-  \caption{Visualización de las librerías en el fichero \textit{"package.json"}}
+  \caption{Visualización de las bibliotecas en el fichero \textit{``package.json"}}
   \label{fig:package_chart}
 \end{figure}
 
-Como podemos ver, con estas librerías ya se puede empezar a generar gráficos. El siguiente paso es obtener los datos de la \textit{API}. 
+Como podemos ver, con estas bibliotecas ya se puede empezar a generar gráficos. El siguiente paso es obtener los datos de la \textit{API}. 
 
 En este proyecto se ha utilizado la \textit{API OpenWeatherMap}\footnote{\url{https://openweathermap.org/}}, en la cual podemos obtener los datos meteorológicos para el día actual, y los datos meteorológicos de una semana.
 Estos datos vienen en formato \textit{JSON}.
 
 \vspace{5mm}
-Para transformar estos datos en legibles, ha sido necesario emplear la librería "\textit{moment}", instalada con el siguiente comando: 
+Para transformar estos datos en legibles, ha sido necesario emplear la biblioteca ``\textit{moment}", instalada con el siguiente comando: 
 \begin{verbatim}
     yarn add moment
 \end{verbatim} 
@@ -827,7 +827,7 @@ Para la transformación de los datos meteorológicos, se ha usado una función c
 \end{figure}
 
 \vspace{5mm}
-Para la transformación de las horas del día se ha usado otra función, en la cual se ha usado la librería \textit{"moment"}, como podemos ver en la Figura~\ref{fig:transform_data}.
+Para la transformación de las horas del día se ha usado otra función, en la cual se ha usado la biblioteca \textit{``moment"}, como podemos ver en la Figura~\ref{fig:transform_data}.
 \begin{figure}[h]
   \centering
   \includegraphics[width=10cm, height=6cm]{img_usadas/transform_data.png}
@@ -844,11 +844,11 @@ Tras realizar el desarrollo del portlet, es hora de desplegarlo y construirlo en
 \begin{verbatim}
     npm run build
 \end{verbatim} 
-Este comando construye las rutas que hay en el proyecto y construye las dependencias que haya en el "\textit{package.json}". La ejecución del comando se puede ver en la Figura~\ref{fig:npm_build}.
+Este comando construye las rutas que hay en el proyecto y construye las dependencias que haya en el ``\textit{package.json}". La ejecución del comando se puede ver en la Figura~\ref{fig:npm_build}.
 \begin{figure}[h]
   \centering
   \includegraphics[width=12cm, height=5cm]{img_usadas/npm_build.png}
-  \caption{Ejecución del comando \textit{"build"}}
+  \caption{Ejecución del comando \textit{``build"}}
   \label{fig:npm_build}
 \end{figure}
 
@@ -860,11 +860,11 @@ Este comando realiza el despliegue del portlet a Liferay, su ejecución se muest
 \begin{figure}[h]
   \centering
   \includegraphics[width=11cm, height=8cm]{img_usadas/deploy.png}
-  \caption{Ejecución del comando \textit{"deploy"}}
+  \caption{Ejecución del comando \textit{``deploy"}}
   \label{fig:deploy}
 \end{figure}
 
-Como podemos ver, al hacer "\textit{deploy}" se hace lo mismo que en "\textit{build"}, añadiendo el despliegue al \textit{tomcat} configurado en el apartado~\ref{sec:creacion-portlet-react} donde introducimos la ruta en la que lo teníamos.
+Como podemos ver, al hacer ``\textit{deploy}" se hace lo mismo que en ``\textit{build}'', añadiendo el despliegue al \textit{tomcat} configurado en el apartado~\ref{sec:creacion-portlet-react} donde introducimos la ruta en la que lo teníamos.
 
 \vspace{5mm}
 Con el servidor arrancado, una vez se completa el despliegue, en la consola deberá aparecer el mensaje que se ve en la Figura~\ref{fig:started}.
@@ -876,7 +876,7 @@ Con el servidor arrancado, una vez se completa el despliegue, en la consola debe
 \end{figure}
 
 \vspace{5mm}
-Una vez vemos el mensaje "STARTED" dentro de la consola, el portlet estará disponible en el portal de Liferay, en la categoría que introdujimos en el apartado~\ref{sec:creacion-portlet-react}. En este caso, la categoría es "\textit{Ejemplo}", por lo que, una vez logueados, seleccionamos la categoría en la sección de configuración de los contenidos de Liferay y arrastramos el portlet, de la forma que vemos en la Figura~\ref{fig:liferay_ex}.
+Una vez vemos el mensaje ``STARTED`` dentro de la consola, el portlet estará disponible en el portal de Liferay, en la categoría que introdujimos en el apartado~\ref{sec:creacion-portlet-react}. En este caso, la categoría es ``\textit{Ejemplo}", por lo que, una vez logueados, seleccionamos la categoría en la sección de configuración de los contenidos de Liferay y arrastramos el portlet, de la forma que vemos en la Figura~\ref{fig:liferay_ex}.
 \begin{figure}[h]
   \centering
   \includegraphics{img_usadas/liferay_ex.png}
@@ -923,7 +923,7 @@ Si desplegamos el selector veremos una lista de ciudades, como se muestra en la 
 
 \section{Visualización datos diarios}
 \label{sec:visualizacion-diaria}
-Al seleccionar la ciudad, se cargarán los gráficos con los datos diarios por defecto, como se ve en la Figura~\ref{fig:pantalla_diaria}. En dicha imagen se pueden ver los datos de la temperatura, la humedad y el viento a unas determinadas horas del día. Estos datos nos los proporciona la \textit{API} de 3 horas en 3 horas, de ahí que se muestren en los gráficos los datos cada 3 horas.
+Al seleccionar la ciudad, se cargarán los gráficos con los datos diarios por defecto, como se ve en la Figura~\ref{fig:pantalla_diaria}. En dicha imagen se pueden ver los datos de la temperatura, la humedad y el viento a unas determinadas horas del día. Estos datos nos los proporciona la \textit{API} de tres horas en tres horas, de ahí que se muestren en los gráficos los datos cada tres horas.
 \begin{figure}[h]
   \centering
   \includegraphics[width=13cm, height=7cm]{img_usadas/pantalla_diaria.png}
@@ -932,7 +932,7 @@ Al seleccionar la ciudad, se cargarán los gráficos con los datos diarios por d
 \end{figure}
 
 \vspace{5mm}
-Para la temperatura diaria, se muestran los datos cada 3 horas en \textit{ºC}, para la humedad se muestra el porcentaje de humedad en esas horas, y para el viento se muestran los datos en \textit{km/h}.
+Para la temperatura diaria, se muestran los datos cada tres horas en grados centígrados (\textit{ºC}), para la humedad se muestra el porcentaje de humedad en esas horas, y para el viento se muestran los datos en kilómetros por hora (\textit{km/h}).
 
 \vspace{5mm}
 Si nos posicionamos sobre alguna barra de algún gráfico, se verá información detallada sobre la hora en la que nos hemos posicionado, tal y como se muestra en la Figura~\ref{fig:detalle_chart}.
@@ -959,7 +959,7 @@ Si seleccionamos en el desplegable el tipo de visualización diferente a la visu
 
 \section{Visualización temperatura semanal}
 \label{sec:visualizacion-semanal}
-Al seleccionar en el desplegable "Semanal", se cargan los datos para mostrarse el gráfico de la tempetatura semanal en una ciudad, tal y como se ve en la Figura~\ref{fig:pantalla_semanal}.
+Al seleccionar en el desplegable ``Semanal", se cargan los datos para mostrarse el gráfico de la tempetatura semanal en una ciudad, tal y como se ve en la Figura~\ref{fig:pantalla_semanal}.
 \begin{figure}[h]
   \centering
   \includegraphics[width=13cm, height=7cm]{img_usadas/pantalla_semanal.png}
@@ -970,7 +970,7 @@ Al seleccionar en el desplegable "Semanal", se cargan los datos para mostrarse e
 En esta imagen se ven las temperaturas máximas, en rojo, y mínimas, en gris, que hay en la semana. De igual manera que pasa con los gráficos diarios, si pasamos por encima de alguna barra del gráfico se verá información detallada sobre dicha barra, indicando el día y la temperatura.
 
 \vspace{5mm}
-Desde esta visualización se puede ir a la visualización diaria, seleccionando en el desplegable del tipo de visualización la opción "Diaria". También se puede cambiar la ciudad para poder comparar las temperaturas de distintas ciudades.
+Desde esta visualización se puede ir a la visualización diaria, seleccionando en el desplegable del tipo de visualización la opción ``Diaria". También se puede cambiar la ciudad para poder comparar las temperaturas de distintas ciudades.
 
 
 
@@ -993,13 +993,13 @@ Si volvemos a los objetivos marcados para este proyecto, el objetivo principal e
 Los objetivos secundarios eran objetivos de formación y familiarización con las tecnologías utilizadas. Este objetivo, por mi parte, también se ha cumplido, debido a que eran tecnologías que no había usado nunca y he podido defenderme con ellas y al final he podido conectarlas. He aprendido el manejo de las dependencias de Liferay y la navegación entre la plataforma, permitiendo diseñar portales a mi gusto, así como el manejo con las funciones y métodos de React y JavaScript, algo que considero muy importante viendo el mercado laboral que hay actualmente.
 
 \section{Aplicación de lo aprendido}
-\label{sec:consecucion_objectivos}
+\label{sec:aprendido}
 Los conocimientos aprendidos me han servido para ser más independiente en la empresa en la que estoy trabajando, debido a que he aprendido a entender el comportamiento de Liferay con los portlets, algo que es muy importante a la hora de crear páginas web utilizando este gestor de contenidos.
 
 \vspace{5mm}
 Además me ha servido para poder enseñar a mis compañeros a añadir portlets realizados con bibliotecas de React, algo que no se había hecho en la empresa de la manera que se ha hecho en este proyecto. 
 
-Incluir librerías de JavaScript en Liferay de esta manera, ejecutando comandos y desarrollando en JavaScript el código de la aplicación, hace que el desarrollo sea más rápido y se puedan realizar más pruebas sobre la aplicación, debido a que podemos ir probando la aplicación de JavaScript sin necesidad de desplegar en Liferay.
+Incluir bibliotecas de JavaScript en Liferay de esta manera, ejecutando comandos y desarrollando en JavaScript el código de la aplicación, hace que el desarrollo sea más rápido y se puedan realizar más pruebas sobre la aplicación, debido a que podemos ir probando la aplicación de JavaScript sin necesidad de desplegar en Liferay.
 
 Esto es algo importante, ya que una vez estás realizando algún tipo de componente, para probarlo en Liferay hay que desplegar cada cambio que se haga y así poder visualizarlo, mientras que si empleamos JavaScript, podemos ver los cambios simplemente con guardar el código.
 
