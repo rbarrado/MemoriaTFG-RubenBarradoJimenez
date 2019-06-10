@@ -226,7 +226,7 @@ Los portlets con React o con JavaScript se pueden desplegar en Liferay por otros
 
 \section{Motivaci\'on}
 \label{sec:motivacion}
-Este proyecto ha sido realizado en colaboración con la empresa \textit{Everis}\footnote{\url{https://www.everis.com/spain/es/home-1}}, en la que estoy trabajando actualmente. En dicha empresa, he trabajado en varios proyectos llevados a cabo por el gestor de contenidos de Liferay, que es muy útil para la creación de Intranets de usuarios.
+Este proyecto ha sido realizado en colaboración con la empresa \textit{Everis}\footnote{\url{https://www.everis.com/spain/es/home-1}}, en la que estoy trabajando actualmente. En dicha empresa, he trabajado en varios proyectos llevados a cabo por el gestor de contenidos de Liferay, muy utilizado en el mundo empresarial como base de portales públicos y privados, tales como intranets o portales de cliente. Por norma general, todos los componentes desarrollados sobre la tecnología Liferay se desarrollan en Java.
 
 \vspace{5mm} %5mm vertical space
 La integración de React en Liferay era un trabajo pendiente de hacer que podría incluir grandes mejoras en los proyectos con las que trabaja la empresa, por lo que ha sido una gran oportunidad de aprendizaje en dicha empresa. React es una de las más populares bibliotecas de JavaScript. En portales de Liferay, React sería muy importante a la hora de crear componentes debido a la velocidad y fluidez de las peticiones bajo demanda. Estos componentes son reutilizables en todo tipo de portales y proyectos desarrollados por Liferay, lo que es una gran ventaja.
@@ -242,6 +242,9 @@ Como hemos visto, React es un framework que está ganando terreno y está increm
   \caption{Comparativa entre las librerías más populares de JavaScript en el mercado}
   \label{fig:react_mercado}
 \end{figure}
+
+\vspace{5mm}
+Por tanto, la implementación de este proyecto plantea como principal reto la utilización de dos tecnologías extendidas en el mercado y que habitualmente no se utilizan de forma conjunta, por un lado cubre las necesidades de las empresas que apuestan por gestores de portales como Liferay, y otro responde a la implantación de React como tecnología asentada en el mercado y en constante evolución.
 
 
 \section{Estructura de la memoria}
@@ -428,7 +431,7 @@ Es una plataforma que ofrece crear aplicaciones web, móviles y servicios rápid
 Este gestor de contenidos es Open Source, o código abierto, que sigue un modelo de desarrollo colaborativo y, además, se basa en los estándares, lo que hace reducir el bloqueo en Liferay. 
 
 \vspace{5mm}
-Para la realización de este proyecto es necesario tener una versión de Liferay 7.1 o superior, debido a que es la versión que soporta el estándar JavaScript, gracias a \textit{Babel}\footnote{\url{https://babeljs.io/}} y a un plugin que se puede instalar en el \textit{MarketPlace}\footnote{\url{https://web.liferay.com/es/marketplace}} de Liferay, llamado \textit{Liferay JS Portlet Extender}\footnote{url{https://web.liferay.com/es/marketplace/-/mp/application/115543020}}. Este plugin está disponible a partir de la versión 7.1, por lo que en las versiones anteriores no se podía usar el estándar JavaScript. Además de éste, Liferay soporta varios estándares importantes~\cite{liferay_dxp}:
+Para la realización de este proyecto es necesario tener una versión de Liferay 7.1 o superior, debido a que es la versión que soporta el estándar JavaScript, gracias a \textit{Babel}\footnote{\url{https://babeljs.io/}} y a un plugin que se puede instalar en el \textit{MarketPlace}\footnote{\url{https://web.liferay.com/es/marketplace}} de Liferay, llamado \textit{Liferay JS Portlet Extender}\footnote{url{https://web.liferay.com/es/marketplace/-/mp/application/115543020}}. Este plugin está disponible a partir de la versión 7.1, y se activa a través de \textit{Marketplace} en el panel de control de Liferay, por lo que en las versiones anteriores no se podía usar el estándar JavaScript. Además de éste, Liferay soporta varios estándares importantes~\cite{liferay_dxp}:
 
 \begin{itemize}
 \item Portlets 1.0 y Portlets 2.0 (JRS-168 y JRS-286): permite la ejecución de cualquier portlet.
