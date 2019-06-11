@@ -139,7 +139,7 @@ Por último, agradecer a todos los profesores con los que me he cruzado por la c
 El presente trabajo de fin de grado ha consistido en integrar soluciones de uso extendido en los portales web que suelen ser utilizados por las compañías, empleando el framework de React dentro de la plataforma de Experiencia Digital de Liferay. Para ello se propone la integración de un gestor de contenidos, como es Liferay, con las bibliotecas y funciones de JavaScript, utilizando React.
 
 \vspace{5mm}
-Para llevar a cabo la integración, se ha realizado el desarrollo de un portlet o componente, en el cual, a partir de unos datos de entrada, en tiempo real y en formato \textit{JSON}, podamos generar tipos de contenido útil para la web y sus usuarios. En dicho componente podemos ver diferentes datos mostrados en forma de gráficos utilizando bibliotecas que permiten la creación de gráficos con React. Los datos utilizados en este trabajo de fin de grado corresponden al tiempo diario y semanal en las capitales de las comunidades autónomas de España.
+Para llevar a cabo la integración se ha realizado el desarrollo de un portlet o componente, en el cual, a partir de unos datos de entrada, en tiempo real y en formato \textit{JSON}, podamos generar tipos de contenido útil para la web y sus usuarios. En dicho componente podemos ver diferentes datos mostrados en forma de gráficos utilizando bibliotecas que permiten la creación de gráficos con React. Los datos utilizados en este trabajo de fin de grado corresponden al tiempo diario y semanal en las capitales de las comunidades autónomas de España.
 
 \vspace{5mm}
 Este proyecto se ha llevado a cabo en colaboración con la empresa \textit{Everis}, para poder solucionar los inconvenientes causados al intentar implementar funciones JavaScript en sus proyectos realizados con Liferay.
@@ -648,7 +648,7 @@ Sus características son:
 \vspace{5mm}
 JSON es una notación ligera para almacenar y transportar datos que se utiliza cuando un servidor envía los datos a una página web. Es un lenguaje autodescriptivo y fácil de entender. Cuando se intercambian datos entre el servidor y la página web, estos datos pueden ser texto, lo que hace que podamos convertir el objeto en JSON, y enviarlo al servidor, o convertir el JSON en objeto para que pueda ser tratado, como en este caso, sin parsear ni traducir de manera difícil.
 
-Es, asimismo, una notación fácil de leer y escribir por las personas, y fácil de interpretar y analizar para para las maquinas. Es un lenguaje más pequeño y más rápido de analizar que el formato \textit{XML}\footnote{eXtensible Markup Language}. Estas propiedades hacen que sea una notación adecuada para el intercambio de datos. 
+Es, asimismo, una notación fácil de leer y escribir por las personas, y fácil de interpretar y analizar para las máquinas. Es un lenguaje más pequeño y más rápido de analizar que el formato \textit{XML}\footnote{eXtensible Markup Language}. Estas propiedades hacen que sea una notación adecuada para el intercambio de datos. 
 
 \vspace{5mm}
 En JSON existen varios tipos de elementos, entre ellos las matrices (arrays) y los objetos (objects). 
@@ -701,11 +701,11 @@ Una vez configuradas las variables de entorno debemos instalar \textit{Node.js}\
 Con la instalación de \textit{Node.js} obtenemos a la vez el sistema de gestión de paquetes \textit{npm} que es necesario para instalar y manejar las dependencias del proyecto, así como las bibliotecas y los paquetes necesarios. Además de \textit{npm}, necesitamos tener instalado otro manejador de paquetes llamado \textit{Yarn}\footnote{Descarga \textit{Yarn}: \url{https://yarnpkg.com/lang/en/}} , que se caracteriza por tener una velocidad mayor que \textit{npm} debido a que permite descargas en simultaneo.
 
 \vspace{5mm}
-Para verificar que tenemos \textit{Node.js}, \textit{npm} y \textit{Yarn} correctamente instalados, es necesario ejecutar en una consola de comandos como en la Figura~\ref{fig:verificacion}.
+Para verificar que tenemos \textit{Node.js}, \textit{npm} y \textit{Yarn} correctamente instalados, es necesario ejecutar en una consola de instrucciones como en la Figura~\ref{fig:verificacion}.
 \begin{figure}
   \centering
   \includegraphics{img_usadas/verificacion.png}
-  \caption{Comandos para verificar la instalación de los paquetes}
+  \caption{Instrucciones para verificar la instalación de los paquetes}
   \label{fig:verificacion}
 \end{figure}
 
@@ -721,7 +721,7 @@ Con estos pasos, tenemos todas las configuraciones y todos los paquetes necesari
 
 \section{Creación portlet React}
 \label{sec:creacion-portlet-react}
-Una vez tenemos un servidor Liferay arrancado y en funcionamiento, podemos empezar a integrar React con Liferay. Para ello es necesario instalar un generador de \textit{Yeoman}\footnote{\url{https://yeoman.io/}}, la instalación se realiza con el siguiente comando: 
+Una vez tenemos un servidor Liferay arrancado y en funcionamiento, podemos empezar a integrar React con Liferay. Para ello es necesario instalar un generador de \textit{Yeoman}\footnote{\url{https://yeoman.io/}}, la instalación se realiza con la siguiente instrucción: 
 \begin{verbatim}
     npm install -g yo
 \end{verbatim}
@@ -731,7 +731,7 @@ Con el generador de \textit{Yeoman} instalado, el siguiente paso es instalar el 
     npm install generator-liferay-bundle
 \end{verbatim}
 
-Con ambos generadores instalados, ya podemos crear el portlet de React con el comando 
+Con ambos generadores instalados, ya podemos crear el portlet de React con la instrucción 
 \begin{verbatim}
     yo liferay-bundle
 \end{verbatim} 
@@ -743,7 +743,7 @@ que nos permite elegir el tipo de proyecto que queremos crear como se muestra en
   \label{fig:liferay_type}
 \end{figure}
 
-El tipo de proyecto que queremos crear en este caso es ``\textit{React based portlet}". Una vez elegido, debemos configurar las opciones que se muestran en la Figura~\ref{fig:liferay_generator_portlet}.
+El tipo de proyecto que queremos crear en este caso es ``\textit{React based portlet}''. Una vez elegido, debemos configurar las opciones que se muestran en la Figura~\ref{fig:liferay_generator_portlet}.
 \begin{figure}[t]
   \centering
   \includegraphics{img_usadas/liferay-bundle-generator.png}
@@ -751,14 +751,14 @@ El tipo de proyecto que queremos crear en este caso es ``\textit{React based por
   \label{fig:liferay_generator_portlet}
 \end{figure}
 
-En dicha Figura~\ref{fig:liferay_generator_portlet} podemos ver que al crear el proyecto debemos darle el nombre que queramos, en este caso ``portletreact", la descripción del proyecto y la categoría en la que queremos que aparezca en el portal de Liferay, en este caso ``\textit{Ejemplo}". 
-Además, nos pregunta si tenemos alguna instalación local de Liferay, que es la que hemos realizado anteriormente, al decirle ``\textit{Yes}" \ nos pregunta sobre la localización de dicha instalación en la que habemos de poner la ruta en la que está el \textit{tomcat} instalado en el apartado~\ref{sec:instalacion-de-componentes-necesarios}.
+En la Figura~\ref{fig:liferay_generator_portlet} podemos ver que al crear el proyecto podemos darle el nombre que queramos, en este caso hemos elegido ``portletreact'', la descripción del proyecto y la categoría en la que queremos que aparezca en el portal de Liferay, en este caso ``\textit{Ejemplo}''. 
+Además, nos pregunta si tenemos alguna instalación local de Liferay, que es la que hemos realizado anteriormente, al decirle ``\textit{Yes}'' nos pregunta sobre la localización de dicha instalación en la que habemos de poner la ruta en la que está el \textit{tomcat} instalado en el apartado~\ref{sec:instalacion-de-componentes-necesarios}.
 
-Al generar un código de ejemplo, se generan los paquetes que vemos en la Figura~\ref{fig:liferay_generator_portlet} que nos permiten la conectividad entre React y Liferay. Por medio del fichero ``\textit{package.json}" se declaran las dependencias del portlet como se puede ver en la Figura~\ref{fig:package_ini}. En el fichero ``\textit{index.js}" se reciben los campos ``\textit{contextPath}", que es la ruta del contexto donde se bajan los recursos estáticos del portlet, y ``\textit{portletElementId}", que es el identificador del nodo que permite la conectividad con el framework para generar la interfaz de usuario.
+Al generar un código de ejemplo se generan los paquetes que vemos en la Figura~\ref{fig:liferay_generator_portlet} que nos permiten la conectividad entre React y Liferay. Por medio del fichero ``\textit{package.json}'' se declaran las dependencias del portlet como se puede ver en la Figura~\ref{fig:package_ini}. En el fichero ``\textit{index.js}'' se reciben los campos ``\textit{contextPath}'', que es la ruta del contexto donde se bajan los recursos estáticos del portlet, y ``\textit{portletElementId}'', que es el identificador del nodo que permite la conectividad con el framework para generar la interfaz de usuario.
 \begin{figure}[h]
   \centering
   \includegraphics[width=8cm, height=6cm]{img_usadas/package_ini.png}
-  \caption{Visualización del fichero ``\textit{package.json}"}
+  \caption{Visualización del fichero ``\textit{package.json}''}
   \label{fig:package_ini}
 \end{figure}
 
@@ -771,21 +771,21 @@ Una vez hemos creado el portlet y tenemos todos los paquetes necesarios instalad
 \vspace{5mm}
 El primer paso para desarrollar la aplicación es instalar las bibliotecas que nos permiten desarrollar la aplicación utilizando React. Para instalar las bibliotecas, recomiendo utilizar la herramienta \textit{Yarn}, comentada en el apartado~\ref{sec:instalacion-de-componentes-necesarios}, debido a que no da conflictos con las dependencias ya instaladas, por el contrario, si usamos \textit{npm} podemos llegar a tener algún tipo de conflicto.
 
-Las primeras bibliotecas que debemos instalar son las que nos permiten programar utilizando \textit{ECMAScript}. Se instalan con los siguientes comandos: 
+Las primeras bibliotecas que debemos instalar son las que nos permiten programar utilizando \textit{ECMAScript}. Se instalan con las siguientes instrucciones: 
 \begin{verbatim}
     yarn add eslint
     yarn add babel-preset-es2015
     yarn add babel-plugin-transform-class-properties
 \end{verbatim} 
-Para verificar que se han instalado bien las bibliotecas, comprobamos que se han añadido al fichero \textit{``package.json"} tal y como se muestra en la Figura~\ref{fig:package_babelrc}.
+Para verificar que se han instalado bien las bibliotecas, comprobamos que se han añadido al fichero \textit{``package.json''} tal y como se muestra en la Figura~\ref{fig:package_babelrc}.
 \begin{figure}[h]
   \centering
   \includegraphics{img_usadas/package_babelrc.png}
-  \caption{Visualización de las bibliotecas de \textit{ECMAScript} en el fichero \textit{``package.json"}}
+  \caption{Visualización de las bibliotecas de \textit{ECMAScript} en el fichero \textit{``package.json''}}
   \label{fig:package_babelrc}
 \end{figure}
 
-Una vez las bibliotecas están instaladas, debemos modificar el fichero ``\textit{.babelrc}" \ de la siguiente manera:
+Una vez las bibliotecas están instaladas, debemos modificar el fichero ``\textit{.babelrc}'' de la siguiente manera:
 \begin{verbatim}
     {
 	        "presets": ["es2015", "react"],
@@ -793,17 +793,17 @@ Una vez las bibliotecas están instaladas, debemos modificar el fichero ``\texti
     }
 \end{verbatim}
 
-Con estas configuraciones ya se puede empezar a programar con React. El siguiente paso es instalar las bibliotecas necesarias para generar los gráficos y transformar los datos recogidos de la \textit{API}. Estas bibliotecas son ``\textit{react-chartjs-2"}, ``\textit{react-chartjs2"} y ``\textit{chart.js"}. Se instalan usando los siguientes comandos: 
+Con estas configuraciones ya se puede empezar a programar con React. El siguiente paso es instalar las bibliotecas necesarias para generar los gráficos y transformar los datos recogidos de la \textit{API}. Estas bibliotecas son ``\textit{react-chartjs-2''}, ``\textit{react-chartjs2''} y ``\textit{chart.js''}. Se instalan usando las siguientes instrucciones: 
 \begin{verbatim}
     yarn add react-chartjs-2
     yarn add react-chartjs2
     yarn add chart.js
 \end{verbatim} 
-Para verificar que se han instalado bien las bibliotecas, comprobamos que se han añadido al fichero \textit{``package.json"} tal y como se muestra en la Figura~\ref{fig:package_chart}.
+Para verificar que se han instalado bien las bibliotecas, comprobamos que se han añadido al fichero \textit{``package.json''} tal y como se muestra en la Figura~\ref{fig:package_chart}.
 \begin{figure}[h]
   \centering
   \includegraphics{img_usadas/package_chart.png}
-  \caption{Visualización de las bibliotecas en el fichero \textit{``package.json"}}
+  \caption{Visualización de las bibliotecas en el fichero \textit{``package.json''}}
   \label{fig:package_chart}
 \end{figure}
 
@@ -813,12 +813,12 @@ En este proyecto se ha utilizado la \textit{API OpenWeatherMap}\footnote{\url{ht
 Estos datos vienen en formato \textit{JSON}.
 
 \vspace{5mm}
-Para transformar estos datos en legibles, ha sido necesario emplear la biblioteca ``\textit{moment}", instalada con el siguiente comando: 
+Para transformar estos datos en legibles, ha sido necesario emplear la biblioteca ``\textit{moment}'', instalada con la siguiente instrucción: 
 \begin{verbatim}
     yarn add moment
 \end{verbatim} 
 
-Para la generación de los gráficos, se va a explicar como modo de ejemplo la obtención de los datos semanales. Los datos los obtenemos de la \textit{API} de la forma que vemos en la Figura~\ref{fig:api_data_week}.
+Para la generación de los gráficos se va a explicar como modo de ejemplo la obtención de los datos semanales. Los datos los obtenemos de la \textit{API} de la forma que vemos en la Figura~\ref{fig:api_data_week}.
 \begin{figure}[h]
   \centering
   \includegraphics[width=12cm, height=8cm]{img_usadas/api_data_week.png}
@@ -860,7 +860,7 @@ Esta función recorre los datos iterando según el día en el que estemos, obten
 \end{figure}
 
 \vspace{5mm}
-Una vez hemos obtenido los datos de las temperaturas y los días, necesitamos introducir estos datos de tal manera que se muestren en los gráficos. Estos datos deben ir de la manera que se guardan en la función \textit{obtainDatasets}, donde introducimos la temperatura máxima y mínima en un objeto junto con su respectivo ``\textit{label}"  que muestra la información de cada barra en el gráfico. La formación de este objeto lo podemos ver en la Figura~\ref{fig:obtain_datasets}.
+Una vez hemos obtenido los datos de las temperaturas y los días, necesitamos introducir estos datos de tal manera que se muestren en los gráficos. Estos datos deben ir de la manera que se guardan en la función \textit{obtainDatasets}, donde introducimos la temperatura máxima y mínima en un objeto junto con su respectivo ``\textit{label}''  que muestra la información de cada barra en el gráfico. La formación de este objeto lo podemos ver en la Figura~\ref{fig:obtain_datasets}.
 \begin{figure}[h]
   \centering
   \includegraphics[height=10cm]{img_usadas/obtain_datasets.png}
@@ -882,31 +882,31 @@ Con esto podemos crear el objeto \textit{dataBar}, que veíamos en la Figura~\re
 
 \section{Despliegue en Liferay} 
 \label{sec:despliegue-liferay}
-Tras realizar el desarrollo del portlet, es hora de desplegarlo y construirlo en el portal de Liferay, para ello debemos tener el servidor arrancado. Antes de desplegarlo hay que construirlo, ejecutando el siguiente comando, en la ruta en la que tenemos guardado el proyecto:
+Tras realizar el desarrollo del portlet, es hora de desplegarlo y construirlo en el portal de Liferay, para ello debemos tener el servidor arrancado. Antes de desplegarlo hay que construirlo, ejecutando la siguiente instrucción, en la ruta en la que tenemos guardado el proyecto:
 \begin{verbatim}
     npm run build
 \end{verbatim} 
-Este comando construye las rutas que hay en el proyecto y construye las dependencias que haya en el ``\textit{package.json}". La ejecución del comando se puede ver en la Figura~\ref{fig:npm_build}.
+Esta instrucción construye las rutas que hay en el proyecto y construye las dependencias que haya en el ``\textit{package.json}''. La ejecución de la instrucción se puede ver en la Figura~\ref{fig:npm_build}.
 \begin{figure}[h]
   \centering
   \includegraphics[width=12cm, height=5cm]{img_usadas/npm_build.png}
-  \caption{Ejecución del comando \textit{``build"}}
+  \caption{Ejecución de la instrucción \textit{``build''}}
   \label{fig:npm_build}
 \end{figure}
 
-Tras construir las dependencias y las rutas del proyecto, hay que desplegar el proyecto en Liferay con el siguiente comando: 
+Tras construir las dependencias y las rutas del proyecto, hay que desplegar el proyecto en Liferay con la siguiente instrucción: 
 \begin{verbatim}
     npm run deploy
 \end{verbatim}
-Este comando realiza el despliegue del portlet a Liferay, su ejecución se muestra en la Figura~\ref{fig:deploy}.
+Esta instrucción realiza el despliegue del portlet a Liferay; su ejecución se muestra en la Figura~\ref{fig:deploy}.
 \begin{figure}[h]
   \centering
   \includegraphics[width=11cm, height=8cm]{img_usadas/deploy.png}
-  \caption{Ejecución del comando \textit{``deploy"}}
+  \caption{Ejecución de la instrucción \textit{``deploy''}}
   \label{fig:deploy}
 \end{figure}
 
-Como podemos ver, al hacer ``\textit{deploy}" se hace lo mismo que en ``\textit{build}'', añadiendo el despliegue al \textit{tomcat} configurado en el apartado~\ref{sec:creacion-portlet-react} donde introducimos la ruta en la que lo teníamos.
+Como podemos ver, al hacer ``\textit{deploy}'' se hace lo mismo que en ``\textit{build}'', añadiendo el despliegue al \textit{tomcat} configurado en el apartado~\ref{sec:creacion-portlet-react} donde introducimos la ruta en la que lo teníamos.
 
 \vspace{5mm}
 Con el servidor arrancado, una vez se completa el despliegue, en la consola deberá aparecer el mensaje que se ve en la Figura~\ref{fig:started}.
@@ -918,7 +918,7 @@ Con el servidor arrancado, una vez se completa el despliegue, en la consola debe
 \end{figure}
 
 \vspace{5mm}
-Una vez vemos el mensaje ``STARTED`` dentro de la consola, el portlet estará disponible en el portal de Liferay, en la categoría que introdujimos en el apartado~\ref{sec:creacion-portlet-react}. En este caso, la categoría es ``\textit{Ejemplo}", por lo que, una vez logueados, seleccionamos la categoría en la sección de configuración de los contenidos de Liferay y arrastramos el portlet, de la forma que vemos en la Figura~\ref{fig:liferay_ex}.
+Una vez vemos el mensaje ``STARTED`` dentro de la consola, el portlet estará disponible en el portal de Liferay, en la categoría que introdujimos en el apartado~\ref{sec:creacion-portlet-react}. En este caso, la categoría es ``\textit{Ejemplo}'', por lo que, una vez logueados, seleccionamos la categoría en la sección de configuración de los contenidos de Liferay y arrastramos el portlet, de la forma que vemos en la Figura~\ref{fig:liferay_ex}.
 \begin{figure}[h]
   \centering
   \includegraphics{img_usadas/liferay_ex.png}
@@ -983,7 +983,7 @@ Al seleccionar la ciudad, se cargarán los gráficos con los datos diarios por d
 \end{figure}
 
 \vspace{5mm}
-Para la temperatura diaria, se muestran los datos cada tres horas en grados centígrados (\textit{ºC}), para la humedad se muestra el porcentaje de humedad en esas horas, y para el viento se muestran los datos en kilómetros por hora (\textit{km/h}).
+Para la temperatura diaria se muestran los datos cada tres horas en grados centígrados (\textit{ºC}), para la humedad se muestra el porcentaje de humedad en esas horas, y para el viento se muestran los datos en kilómetros por hora (\textit{km/h}).
 
 \vspace{5mm}
 Si nos posicionamos sobre alguna barra de algún gráfico, se verá información detallada sobre la hora en la que nos hemos posicionado, tal y como se muestra en la Figura~\ref{fig:detalle_chart}.
@@ -1010,7 +1010,7 @@ Si seleccionamos en el desplegable el tipo de visualización diferente a la visu
 
 \section{Visualización temperatura semanal}
 \label{sec:visualizacion-semanal}
-Al seleccionar en el desplegable ``Semanal", se cargan los datos para mostrarse el gráfico de la tempetatura semanal en una ciudad, tal y como se ve en la Figura~\ref{fig:pantalla_semanal}.
+Al seleccionar en el desplegable ``Semanal'' se cargan los datos para mostrarse el gráfico de la tempetatura semanal en una ciudad, tal y como se ve en la Figura~\ref{fig:pantalla_semanal}.
 \begin{figure}[h]
   \centering
   \includegraphics[width=13cm, height=7cm]{img_usadas/pantalla_semanal.png}
@@ -1021,7 +1021,7 @@ Al seleccionar en el desplegable ``Semanal", se cargan los datos para mostrarse 
 En esta imagen se ven las temperaturas máximas, en rojo, y mínimas, en gris, que hay en la semana. De igual manera que pasa con los gráficos diarios, si pasamos por encima de alguna barra del gráfico se verá información detallada sobre dicha barra, indicando el día y la temperatura.
 
 \vspace{5mm}
-Desde esta visualización se puede ir a la visualización diaria, seleccionando en el desplegable del tipo de visualización la opción ``Diaria". También se puede cambiar la ciudad para poder comparar las temperaturas de distintas ciudades.
+Desde esta visualización se puede ir a la visualización diaria, seleccionando en el desplegable del tipo de visualización la opción ``Diaria''. También se puede cambiar la ciudad para poder comparar las temperaturas de distintas ciudades.
 
 
 
@@ -1034,14 +1034,14 @@ Desde esta visualización se puede ir a la visualización diaria, seleccionando 
 \cleardoublepage
 \chapter{Conclusiones}
 \label{chap:conclusiones}
-En este último capítulo, se va a realizar un análisis de los resultados obtenidos en base a los objetivos planteados, de la aplicación de los conocimientos aprendidos y de los posibles trabajos futuros relacionados con este proyecto.
+En este último capítulo se va a realizar un análisis de los resultados obtenidos, en base a los objetivos planteados, de la aplicación de los conocimientos aprendidos y de los posibles trabajos futuros relacionados con este proyecto.
 
 \section{Consecución de los objetivos}
 \label{sec:consecucion_objectivos}
 Si volvemos a los objetivos marcados para este proyecto, el objetivo principal era integrar React con Liferay, pudiendo utilizar sus bibliotecas y tener una aplicación de React dentro de Liferay para poder gestionarla de la manera que queramos. Este objetivo se ha cumplido como hemos podido ver en el desarrollo de este trabajo, pudiendo añadir y eliminar dependencias para crear la conexión entre Liferay y React, y pudiendo usar las bibliotecas de React dentro de la plataforma de Liferay.
 
 \vspace{5mm}
-Los objetivos secundarios eran objetivos de formación y familiarización con las tecnologías utilizadas. Este objetivo, por mi parte, también se ha cumplido, debido a que eran tecnologías que no había usado nunca y he podido defenderme con ellas y al final he podido conectarlas. He aprendido el manejo de las dependencias de Liferay y la navegación entre la plataforma, permitiendo diseñar portales a mi gusto, así como el manejo con las funciones y métodos de React y JavaScript, algo que considero muy importante viendo el mercado laboral que hay actualmente.
+Los objetivos secundarios eran objetivos de formación y familiarización con las tecnologías utilizadas. Estos objetivos, por mi parte, también se han cumplido, debido a que eran tecnologías que no había usado nunca y he podido defenderme con ellas y al final he podido conectarlas. He aprendido el manejo de las dependencias de Liferay y la navegación entre la plataforma, permitiendo diseñar portales a mi gusto, así como el manejo con las funciones y métodos de React y JavaScript, algo que considero muy importante viendo el mercado laboral que hay actualmente.
 
 \section{Aplicación de lo aprendido}
 \label{sec:aprendido}
@@ -1050,23 +1050,23 @@ Los conocimientos aprendidos me han servido para ser más independiente en la em
 \vspace{5mm}
 Además me ha servido para poder enseñar a mis compañeros a añadir portlets realizados con bibliotecas de React, algo que no se había hecho en la empresa de la manera que se ha hecho en este proyecto. 
 
-Incluir bibliotecas de JavaScript en Liferay de esta manera, ejecutando comandos y desarrollando en JavaScript el código de la aplicación, hace que el desarrollo sea más rápido y se puedan realizar más pruebas sobre la aplicación, debido a que podemos ir probando la aplicación de JavaScript sin necesidad de desplegar en Liferay.
+Incluir bibliotecas de JavaScript en Liferay de esta manera, ejecutando instrucciones y desarrollando en JavaScript el código de la aplicación, hace que el desarrollo sea más rápido y se puedan realizar más pruebas sobre la aplicación, debido a que podemos ir probando la aplicación de JavaScript sin necesidad de desplegar en Liferay.
 
 Esto es algo importante, ya que una vez estás realizando algún tipo de componente, para probarlo en Liferay hay que desplegar cada cambio que se haga y así poder visualizarlo, mientras que si empleamos JavaScript, podemos ver los cambios simplemente con guardar el código.
 
  
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
-En este proyecto, se ha integrado React con Liferay, haciendo que el código programado en React se comunique y se visualice en Liferay.
+En este proyecto se ha integrado React con Liferay, haciendo que el código programado en React se comunique y se visualice en Liferay.
 
-Un posible trabajo futuro sería poder comunicar Liferay con React, no React con Liferay como se ha hecho en este trabajo. Esto es, que se pueda realizar un portlet con React, que al estar en Liferay, se pueda configurar desde la configuración de Liferay, para comunicarle dichas configuraciones a React, y se desarrolle el portlet según se configure.
+Un posible trabajo futuro sería poder comunicar Liferay con React, no React con Liferay como se ha hecho en este trabajo. Esto es, que se pueda realizar un portlet con React, que al estar en Liferay se pueda configurar desde la configuración de Liferay, para comunicarle dichas configuraciones a React, y se desarrolle el portlet según se configure.
 
-En este caso, se podría haber realizado una configuración en el portlet de Liferay para poder elegir el color de los gráficos, o la forma en la que queremos que se visualicen los gráficos. Estas configuraciones realizadas desde el componente en Liferay podrían haber cambiado dichos colores o dichas formas.
+En este caso se podría haber realizado una configuración en el portlet de Liferay para poder elegir el color de los gráficos, o la forma en la que queremos que se visualicen los gráficos. Estas configuraciones realizadas desde el componente en Liferay podrían haber cambiado dichos colores o dichas formas.
 
 \vspace{5mm}
 Otro posible trabajo futuro sería poder incluir \textit{Redux}\footnote{\url{https://es.redux.js.org/}}, que hace que se actualice automáticamente la aplicación si un componente cambia, lo que permite que se individualicen los problemas de una manera más rápida. Si tenemos una aplicación muy grande y se realiza un cambio en un componente una vez el proyecto está casi acabado, \textit{Redux} hace que se actualice el cambio en la aplicación, al igual que sus variables sin necesidad de hacerlo manualmente.
 
-Otra ventaja de \textit{Redux} es que si se actualiza el estado de una variable en un componente, se actualiza también en el resto de componentes del programa.
+Otra ventaja de \textit{Redux} es que si se actualiza el estado de una variable en un componente se actualiza también en el resto de componentes del programa.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
