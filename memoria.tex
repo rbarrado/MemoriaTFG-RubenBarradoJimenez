@@ -241,7 +241,7 @@ Este proyecto ha sido realizado en colaboración con la empresa \textit{Everis}\
 La integración de React en Liferay era un trabajo pendiente de hacer que podría incluir grandes mejoras en los proyectos con las que trabaja la empresa, por lo que ha sido una gran oportunidad de aprendizaje en dicha empresa. React es una de las más populares bibliotecas de JavaScript. En portales de Liferay, React sería muy importante a la hora de crear componentes debido a la velocidad y fluidez de las peticiones bajo demanda. Estos componentes son reutilizables en todo tipo de portales y proyectos desarrollados por Liferay, lo que es una gran ventaja.
 
 \vspace{5mm} %5mm vertical space
-React es una de las plataformas más utilizadas por las empresas, por encima de \textit{Angular}, que hasta hace poco DOMinaba el mercado por encima de React, por lo que muchas empresas piden desarrollos llevados a cabo con React, por lo que era una buena oportunidad para incorporar esta biblioteca de JavaScript en la plataforma Liferay.
+React es una de las plataformas más utilizadas por las empresas, por encima de \textit{Angular}, que hasta hace poco dominaba el mercado por encima de React, por lo que muchas empresas piden desarrollos llevados a cabo con React, por lo que era una buena oportunidad para incorporar esta biblioteca de JavaScript en la plataforma Liferay.
 
 \vspace{5mm} %5mm vertical space
 Como hemos visto, React es un framework que está ganando terreno y está incrementando su uso en el mercado, tal y como podemos ver en la Figura~\ref{fig:react_mercado}, en la cual podemos ver la comparativa, realizada por Jobfluent\footnote{\url{https://www.jobfluent.com/es}}, entre las bibliotecas de React, Angular y VUE, donde podemos ver el crecimiento de React respecto al resto de frameworks.
@@ -818,24 +818,66 @@ Para transformar estos datos en legibles, ha sido necesario emplear la bibliotec
     yarn add moment
 \end{verbatim} 
 
-Para la transformación de los datos meteorológicos, se ha usado una función como se muestra en la Figura~\ref{fig:transform_day}.
+Para la generación de los gráficos, se va a explicar como modo de ejemplo la obtención de los datos semanales. Los datos los obtenemos de la \textit{API} de la forma que vemos en la Figura~\ref{fig:api_data_week}.
 \begin{figure}[h]
   \centering
-  \includegraphics[width=12cm, height=5cm]{img_usadas/transform_day.png}
-  \caption{Función para transformar los datos del \textit{JSON}}
-  \label{fig:transform_day}
+  \includegraphics[width=12cm, height=8cm]{img_usadas/api_data_week.png}
+  \caption{Función para obtener los datos de la \textit{API}}
+  \label{fig:api_data_week}
+\end{figure}
+
+En esta imagen podemos ver que obtenemos los datos mediante una url que accede a la \textit{API} y recoge los datos en un JSON. Estos datos son transformados, en primer lugar, obteniendo los datos que queremos con la función que se muestra en la Figura~\ref{fig:transform_forecast}.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=10cm, height=6cm]{img_usadas/transform_forecast.png}
+  \caption{Función para transformar las horas y obtener datos del \textit{JSON}}
+  \label{fig:transform_forecast}
+\end{figure}
+
+Esta función filtra los datos por las horas que necesitamos para obtener un gran número de datos y así poder precisar la temperatura máxima y mínima. Para obtener los datos meteorológicos se usa la función \textit{transformWeatherForecast} como se muestra en la Figura~\ref{fig:transform_data_week}.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=12cm, height=7cm]{img_usadas/transform_data_week.png}
+  \caption{Función para obtener datos meteorológicos del \textit{JSON}}
+  \label{fig:transform_data_week}
 \end{figure}
 
 \vspace{5mm}
-Para la transformación de las horas del día se ha usado otra función, en la cual se ha usado la biblioteca \textit{``moment"}, como podemos ver en la Figura~\ref{fig:transform_data}.
+Como veíamos en la Figura~\ref{fig:api_data_week}, una vez transformados los datos de la \textit{API}, necesitamos calcular la temperatura máxima y la temperatura mínima de cada día de la semana, para calcular estas temperaturas se usa la función \textit{obtainDataDays}, donde se calculan las temperaturas de la forma que se ve en la Figura~\ref{fig:obtain_temp_max_min}.
 \begin{figure}[h]
   \centering
-  \includegraphics[width=10cm, height=6cm]{img_usadas/transform_data.png}
-  \caption{Función para transformar las horas del \textit{JSON}}
-  \label{fig:transform_data}
+  \includegraphics[width=15cm]{img_usadas/obtain_temp_max_min.png}
+  \caption{Función para calcular la temperatura máxima y mínima de cada día}
+  \label{fig:obtain_temp_max_min}
 \end{figure}
 
-Una vez obtenemos los datos legibles, ya podemos empezar a usarlos y a generar los gráficos con ellos. Estos gráficos se verán en el Capítulo~\ref{chap:resultados_obtenidos}.
+Esta función recorre los datos iterando según el día en el que estemos, obteniendo las máximas y mínimas temperaturas de los días de la semana, que se obtienen con la función \textit{obtainDays} de la forma que se ve en la Figura~\ref{fig:obtain_days_week}.
+\begin{figure}[h]
+  \centering
+  \includegraphics[height=3cm]{img_usadas/obtain_days_week.png}
+  \caption{Función para obtener los días de la semana}
+  \label{fig:obtain_days_week}
+\end{figure}
+
+\vspace{5mm}
+Una vez hemos obtenido los datos de las temperaturas y los días, necesitamos introducir estos datos de tal manera que se muestren en los gráficos. Estos datos deben ir de la manera que se guardan en la función \textit{obtainDatasets}, donde introducimos la temperatura máxima y mínima en un objeto junto con su respectivo ``\textit{label}"  que muestra la información de cada barra en el gráfico. La formación de este objeto lo podemos ver en la Figura~\ref{fig:obtain_datasets}.
+\begin{figure}[h]
+  \centering
+  \includegraphics[height=10cm]{img_usadas/obtain_datasets.png}
+  \caption{Función para obtener los datos que se muestran en los gráficos}
+  \label{fig:obtain_datasets}
+\end{figure}
+
+\vspace{5mm}
+Con esto podemos crear el objeto \textit{dataBar}, que veíamos en la Figura~\ref{fig:api_data_week}. Este objeto se introduce en los gráficos de la forma que se muestra en la Figura~\ref{fig:obtain_datasets}, donde se crean los gráficos que veremos en el Capítulo~\ref{chap:resultados_obtenidos}.
+\begin{figure}[h]
+  \centering
+  \includegraphics{img_usadas/chart_data.png}
+  \caption{Generación de los gráficos}
+  \label{fig:chart_data}
+\end{figure}
+
+
 
 
 \section{Despliegue en Liferay} 
@@ -898,6 +940,15 @@ Posicionamos el componente en la zona que queramos del portal y tendríamos el p
 \chapter{Resultados obtenidos}
 \label{chap:resultados_obtenidos}
 Una vez se ha desplegado el portlet en Liferay y se ha movido a la zona donde se desea, podemos empezar a usar el componente. En este capítulo se van a detallar los resultados obtenidos al desarrollar e integrar la aplicación.
+
+La arquitectura de la aplicación se muestra en la Figura~\ref{fig:arquitectura}, donde podemos ver que React se integra con Liferay mediante la herramienta \textit{npm} y una vez en el portal de Liferay, realizamos llamadas a la \textit{API} que nos devuelve los datos para poder generar los gráficos. Cada vez que se realiza un cambio en la aplicación, para mostrar otra ciudad o cambiar la visualización entre datos diarios y semanales, Liferay realiza la llamada a la \textit{API} generando los nuevos gráficos.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=18cm]{img_usadas/arquitectura.png}
+  \caption{Arquitectura de la aplicación}
+  \label{fig:arquitectura}
+\end{figure}
+
 
 
 \section{Visualización inicial}
